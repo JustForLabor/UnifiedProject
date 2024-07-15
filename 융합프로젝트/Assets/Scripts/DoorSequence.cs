@@ -45,8 +45,6 @@ public class DoorSequence : MonoBehaviour
             float dotProduct = Vector3.Dot(door.transform.right, toPlayer);
             Vector3 goalRotation;
 
-            Debug.Log(dotProduct);
-
             if (dotProduct > 0) // 플레이어가 문 앞일 때
             {
                 goalRotation = originRotation + new Vector3(0, -rotationAmount, 0);
