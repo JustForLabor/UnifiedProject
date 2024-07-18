@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class DoorSequence : MonoBehaviour
+public class DoorSequence : MonoBehaviour // 문 동작
 {
     [SerializeField] float rotationAmount;
     [SerializeField] GameObject door;
@@ -41,8 +41,8 @@ public class DoorSequence : MonoBehaviour
     {
         if (isDoorOpened == false)
         {
-            Vector3 toPlayer = player.transform.position -  door.transform.position;
-            float dotProduct = Vector3.Dot(door.transform.right, toPlayer);
+            Vector3 toPlayer = player.transform.position -  door.transform.position; // 문과 플레이어 위치 사이의 벡터
+            float dotProduct = Vector3.Dot(door.transform.right, toPlayer); // 문과 위치 벡터의 내적 구하기
             Vector3 goalRotation;
 
             if (dotProduct > 0) // 플레이어가 문 앞일 때

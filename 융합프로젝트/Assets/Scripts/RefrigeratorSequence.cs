@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class RefrigeratorSequence : MonoBehaviour
+public class RefrigeratorSequence : MonoBehaviour // 냉장고 동작
 {
     public GameObject leftDoor;
     public GameObject rightDoor;

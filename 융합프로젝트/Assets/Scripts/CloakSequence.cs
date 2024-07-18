@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class CloakSequence : MonoBehaviour
+public class CloakSequence : MonoBehaviour // 시계 동작
 {
     //------------------------ 이벤트 ------------------------------------
     public EventHandler onDay; // 아침이 될 때 호출

@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using DG.Tweening;
 
-public class WindowSequence : MonoBehaviour
+public class WindowSequence : MonoBehaviour // 창문 동작
 {
     public RainSequence rainSequence; // RainSequence 스크립트 할당
 

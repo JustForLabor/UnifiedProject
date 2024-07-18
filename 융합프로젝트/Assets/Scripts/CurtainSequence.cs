@@ -4,7 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using System;
 
-public class CurtainSequence : MonoBehaviour
+public class CurtainSequence : MonoBehaviour // 커튼 동작
 {
     public RainSequence rainSequence; // RainSequence 스크립트 할당
     public GameObject curtain;

@@ -5,7 +5,7 @@ using UnityEngine;
 using DG.Tweening;
 using System;
 
-public class BedSequence : MonoBehaviour
+public class BedSequence : MonoBehaviour // 침대, TV 동작
 {
     public Vector3 fromAngle; // 초기 회전
     public Vector3 toAngle; // 목표 회전

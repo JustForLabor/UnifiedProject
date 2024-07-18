@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using System;
 
-public class RainSequence : MonoBehaviour
+public class RainSequence : MonoBehaviour // 비 동작
 {
     public KeyCode activateKey; // 작동 키
     public ParticleSystem rainParticle; // 비 파티클
