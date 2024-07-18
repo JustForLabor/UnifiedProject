@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class BedSequence : MonoBehaviour
 {
@@ -10,46 +11,37 @@ public class BedSequence : MonoBehaviour
     public Vector3 toAngle; // 목표 회전
     [SerializeField] GameObject bedComponent; // 침대 회전 오브젝트
     [SerializeField] GameObject television; // TV 오브젝트
-    private bool isBedRotated = false;
-    private bool isTVMoved = false;
 
-    void Update()
+    public CloakSequence cloakSequence;
+
+    private void Start()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            BedMovement();
-            televisionMovement();
-        }  
+        cloakSequence.onDay += BedUp;
+        cloakSequence.onDay += televisionUp;
+        
+        cloakSequence.onNight += BedDown;
+        cloakSequence.onNight += televisionDown;
     }
 
-    public void BedMovement()
+    public void BedUp(object sender, EventArgs e)
     {
-        if (isBedRotated == false)
-            {
-                bedComponent.transform.DORotate(toAngle, 3, RotateMode.LocalAxisAdd);
-                isBedRotated = !isBedRotated;
-            }
-
-            else
-            {
-                bedComponent.transform.DORotate(fromAngle, 3);
-                isBedRotated = !isBedRotated;
-            }
+        bedComponent.transform.DORotate(toAngle, 3);
     }
 
-    public void televisionMovement()
+    public void BedDown(object sender, EventArgs e)
+    {
+        bedComponent.transform.DORotate(fromAngle, 3);
+    }
+
+    public void televisionUp(object sender, EventArgs e)
     {
         Transform tf = television.transform;
-        if (isTVMoved == false)
-        {
-            tf.DOMove(new Vector3(25.5f,3.5f,22f), 3);
-            isTVMoved = !isTVMoved;
-        }
-        else
-        {
-            tf.DOMove(new Vector3(25.5f,0.5f,22f), 3);
-            isTVMoved = !isTVMoved;
-        }
-        
+        tf.DOMove(new Vector3(25.5f,3.5f,22f), 3);       
+    }
+
+    public void televisionDown(object sender, EventArgs e)
+    {
+        Transform tf = television.transform;
+        tf.DOMove(new Vector3(25.5f,0.5f,22f), 3);
     }
 }
